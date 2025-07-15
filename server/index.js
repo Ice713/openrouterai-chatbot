@@ -23,8 +23,8 @@ app.post('/chat', async (req, res) => {
     });
 
     res.json({ reply: chatCompletion.choices[0].message.content });
-  } catch (err) {
-    console.error(err);
+  }  catch (err) {
+    console.error('Error from OpenAI:', err);
     res.status(500).send('Something went wrong');
   }
 });
