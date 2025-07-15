@@ -16,6 +16,7 @@ const openai = new OpenAI({
 app.post('/chat', async (req, res) => {
   try {
     const { message } = req.body;
+    console.log('User message:', message); // ✅ log it
 
     const chatCompletion = await openai.chat.completions.create({
       model: 'gpt-3.5-turbo',
@@ -25,7 +26,7 @@ app.post('/chat', async (req, res) => {
     res.json({ reply: chatCompletion.choices[0].message.content });
   }  catch (err) {
     console.error('Error from OpenAI:', err);
-    res.status(500).send('Something went wrong');
+    res.status(500).json({ error: 'Something went wrong'});
   }
 });
 
