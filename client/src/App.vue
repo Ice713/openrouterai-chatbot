@@ -1,6 +1,6 @@
 <template>
   <div class="chat-container">
-    <h1>🧠 OpenAI Chatbot</h1>
+    <h1>🧠 OpenRouterAI Chatbot</h1>
 
     <div class="chat-box">
       <div v-for="(msg, index) in messages" :key="index" :class="msg.sender">
