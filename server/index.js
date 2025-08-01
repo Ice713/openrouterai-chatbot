@@ -20,7 +20,7 @@ app.post('/chat', async (req, res) => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        model: 'google/gemma-3n-e2b-it:free', // ✅ Free and available
+        model: 'mistralai/mistral-small-3.2-24b-instruct:free', // ✅ Free and available
         messages: [{ role: 'user', content: userMessage }]
       })
     });
