@@ -100,4 +100,52 @@ input {
 button {
   padding: 0.5rem 1rem;
 }
+
+/* Default = dark mode (fallback) */
+.chat-box {
+  border: 1px solid #444;
+  background-color: #1e1e1e;
+  color: #eee;
+}
+
+input {
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #555;
+}
+
+button {
+  background-color: #444;
+  color: #fff;
+  border: 1px solid #666;
+}
+
+button:hover {
+  background-color: #666;
+}
+
+/* Light mode override */
+@media (prefers-color-scheme: light) {
+  .chat-box {
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    color: #000;
+  }
+
+  input {
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #ccc;
+  }
+
+  button {
+    background-color: #f0f0f0;
+    color: #000;
+    border: 1px solid #aaa;
+  }
+
+  button:hover {
+    background-color: #ddd;
+  }
+}
 </style>

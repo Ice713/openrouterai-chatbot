@@ -1,36 +1,48 @@
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import { OpenAI } from 'openai';
 
 dotenv.config();
-
 const app = express();
 app.use(cors());
 app.use(express.json());
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY
-});
+const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY;
 
 app.post('/chat', async (req, res) => {
   try {
-    const { message } = req.body;
-    console.log('User message:', message); // ✅ log it
+    const userMessage = req.body.message;
 
-    const chatCompletion = await openai.chat.completions.create({
-      model: 'gpt-3.5-turbo',
-      messages: [{ role: 'user', content: message }]
+    const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${process.env.OPENROUTER_API_KEY}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        model: 'google/gemma-3n-e2b-it:free', // ✅ Free and available
+        messages: [{ role: 'user', content: userMessage }]
+      })
     });
 
-    res.json({ reply: chatCompletion.choices[0].message.content });
-  }  catch (err) {
-    console.error('Error from OpenAI:', err);
-    res.status(500).json({ error: 'Something went wrong'});
+    const data = await response.json();
+
+    if (!data.choices || !data.choices[0]?.message?.content) {
+      console.error('Invalid response:', data); // ✅ Log for debugging
+      return res.status(500).json({ error: 'Invalid response from model' });
+    }
+
+    const botReply = data.choices[0].message.content;
+    res.json({ reply: botReply });
+
+  } catch (err) {
+    console.error('Error from OpenRouter:', err);
+    res.status(500).json({ error: 'Something went wrong' });
   }
 });
 
+
 const PORT = 5000;
 app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+  console.log(`Server running at http://localhost:${PORT}`);
 });
