@@ -4,7 +4,10 @@
 
     <div class="chat-box">
       <div v-for="(msg, index) in messages" :key="index" :class="msg.sender">
-        <strong>{{ msg.sender === 'user' ? 'You': 'Bot' }}:</strong> {{ msg.text }}
+        <strong>{{ msg.sender === 'user' ? 'You': 'Bot' }}:</strong> 
+        <span v-if="msg.sender === 'user'">{{ msg.text }}</span>
+        <!-- Render Markdown for bot messages -->
+        <span v-else v-html="renderMarkdown(msg.text)"></span>
       </div>
     </div>
 
@@ -22,6 +25,8 @@
 </template>
 
 <script>
+import { marked } from 'marked'
+
 export default {
   data() {
     return {
@@ -30,6 +35,10 @@ export default {
     };
   },
   methods: {
+    renderMarkdown(text) {
+      // Use marked to convert Markdown to HTML
+      return marked.parse(text);
+    },
     async sendMessage() {
       if (!this.userMessage.trim()) return;
 
