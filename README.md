@@ -1,5 +1,50 @@
-# Vue 3 + Vite
+# 💬 OpenAI Chatbot (Vue.js + Node.js + Tailwind)
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+This is a simple chatbot application powered by OpenAI via the [OpenRouter API](https://openrouter.ai/), built with **Vue.js** on the frontend and **Node.js (Express)** on the backend. Styled using **Tailwind CSS** for flexibility and responsiveness.
 
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
+## 🛠️ Features
+
+- Chat with an OpenAI-powered assistant
+- Supports light/dark mode with Tailwind
+- Real-time communication via Axios
+- Backend proxy to OpenRouter API (using server-side `.env` API key)
+- Easily deployable and customizable
+
+---
+
+## 📁 Project Structure
+my-openai-chatbot/
+├── client/ # Vue.js frontend
+│ ├── src/
+│ └── tailwind.config.js
+├── server/ # Node.js backend
+│ └── index.js
+├── .env # Stores the OpenRouter API key
+├── package.json # Root package.json (optional)
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the repo
+
+<code>
+git clone https://github.com/your-username/my-openai-chatbot.git
+cd my-openai-chatbot
+</code>
+
+### 2. Setup the backend
+<code>
+cd server
+npm install
+</code>
+
+Create a .env file inside /server and add your API key:
+<code>
+OPENROUTER_API_KEY=your-api-key-here
+</code>
+
+Then run:
+<bash>
+node index.js
+</bash>
