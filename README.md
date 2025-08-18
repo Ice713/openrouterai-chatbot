@@ -28,44 +28,40 @@ my-openai-chatbot/<br>
 
 ### 1. Clone the repo
 
-<code>git clone https://github.com/your-username/my-openai-chatbot.git
-cd my-openai-chatbot
-</code>
+<code>git clone https://github.com/your-username/my-openai-chatbot.git</code>
+<code>cd my-openai-chatbot</code>
 
 ### 2. Setup the backend
-<code>cd server
-npm install
-</code>
+<code>cd server</code>
+<code>npm install</code>
 
-Create a <code>.env</code> file inside <code>/server</code> and add your API key:
-<code>OPENROUTER_API_KEY=your-api-key-here
-</code>
+Create a <code>.env</code> file inside <code>/server</code> and add your API key:<br>
+<code>OPENROUTER_API_KEY=your-api-key-here</code>
 
-Then run:
-<code>node index.js
-</code>
+Then run:<br>
+<code>node index.js</code>
 
 ### 3. Setup the frontend
 <code>cd ../client
 npm install
 </code>
 
-If Tailwind is not yet set up:
-<code>npm install -D tailwindcss postcss autoprefixer
-npx tailwindcss init -p</code>
+If Tailwind is not yet set up:<br>
+<code>npm install -D tailwindcss postcss autoprefixer</code>
+<code>npx tailwindcss init -p</code>
 
-Make sure <code>tailwind.config.js</code> has the proper content path (for Vue):
+Make sure <code>tailwind.config.js</code> has the proper content path (for Vue):<br>
 <code>content: [
   "./index.html",
   "./src/**/*.{vue,js,ts,jsx,tsx}",
 ]</code>
 
-Update your <code>style.css</code>:
+Update your <code>style.css</code>:<br>
 <code>@tailwind base;
 @tailwind components;
 @tailwind utilities;</code>
 
-Then run:
+Then run:<br>
 <code>npm run dev</code>
 
 ---
