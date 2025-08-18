@@ -28,11 +28,11 @@ my-openai-chatbot/<br>
 
 ### 1. Clone the repo
 
-<code>git clone https://github.com/your-username/my-openai-chatbot.git</code>
+<code>git clone https://github.com/your-username/my-openai-chatbot.git</code><br>
 <code>cd my-openai-chatbot</code>
 
 ### 2. Setup the backend
-<code>cd server</code>
+<code>cd server</code><br>
 <code>npm install</code>
 
 Create a <code>.env</code> file inside <code>/server</code> and add your API key:<br>
@@ -42,12 +42,11 @@ Then run:<br>
 <code>node index.js</code>
 
 ### 3. Setup the frontend
-<code>cd ../client
-npm install
-</code>
+<code>cd ../client</code><br>
+<code>npm install</code>
 
 If Tailwind is not yet set up:<br>
-<code>npm install -D tailwindcss postcss autoprefixer</code>
+<code>npm install -D tailwindcss postcss autoprefixer</code><br>
 <code>npx tailwindcss init -p</code>
 
 Make sure <code>tailwind.config.js</code> has the proper content path (for Vue):<br>
