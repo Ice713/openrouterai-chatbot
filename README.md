@@ -13,14 +13,14 @@ This is a simple chatbot application powered by OpenAI via the [OpenRouter API](
 ---
 
 ## 📁 Project Structure
-my-openai-chatbot/
-├── client/ # Vue.js frontend
-│ ├── src/
-│ └── tailwind.config.js
-├── server/ # Node.js backend
-│ └── index.js
-├── .env # Stores the OpenRouter API key
-├── package.json # Root package.json (optional)
+my-openai-chatbot/<br>
+├── client/ # Vue.js frontend<br>
+│ ├── src/<br>
+│ └── tailwind.config.js<br>
+├── server/ # Node.js backend<br>
+│ └── index.js<br>
+├── .env # Stores the OpenRouter API key<br>
+├── package.json # Root package.json (optional)<br>
 
 ---
 
