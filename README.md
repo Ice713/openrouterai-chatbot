@@ -28,8 +28,8 @@ my-openai-chatbot/<br>
 
 ### 1. Clone the repo
 
-<code>git clone https://github.com/your-username/my-openai-chatbot.git</code><br>
-<code>cd my-openai-chatbot</code>
+<code>git clone https://github.com/Ice713/openrouterai-chatbot.git</code><br>
+<code>cd openrouterai-chatbot</code>
 
 ### 2. Setup the backend
 <code>cd server</code><br>
