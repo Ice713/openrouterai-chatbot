@@ -36,7 +36,7 @@ Open Terminal in Command Prompt, not Powershell.
 <code>cd server</code><br>
 <code>npm install</code>
 
-Create a <code>.env</code> file inside <code>/server</code> and add your API key:<br>
+Create a <code>.env</code> file inside <code>/server</code> using <code>type nul > .env</code> and add your API key:<br>
 <code>OPENROUTER_API_KEY=your-api-key-here</code>
 
 Then run:<br>
