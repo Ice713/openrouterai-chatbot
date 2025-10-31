@@ -21,6 +21,7 @@ app.post('/chat', async (req, res) => {
       },
       body: JSON.stringify({
         model: 'mistralai/mistral-small-3.2-24b-instruct:free', // ✅ Free and available
+        // model: 'openai/gpt-oss-20b:free', // ✅ Free and available
         messages: [{ role: 'user', content: userMessage }]
       })
     });
