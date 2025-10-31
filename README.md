@@ -32,6 +32,7 @@ my-openai-chatbot/<br>
 <code>cd openrouterai-chatbot</code>
 
 ### 2. Setup the backend
+Open Terminal in Command Prompt, not Powershell.
 <code>cd server</code><br>
 <code>npm install</code>
 
